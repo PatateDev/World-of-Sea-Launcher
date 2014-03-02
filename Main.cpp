@@ -1,12 +1,17 @@
 #include "Main.h"
 
+void connect()
+{
+
+}
+
 int main(int argc, char*argv[])
 {
     // DECLARATION
     sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), "World of Sea");
     sf::Event event;
     sf::Font fontArial, fontCaribbean, fontFlogged;
-    sf::Texture buttonImg, buttonFocImg, textureBackground;
+    sf::Texture textureTextfield, textureTextfieldFocus, textureBackground, textureButton, textureButtonFocus;
     //
 
     // INITIALISATION
@@ -14,9 +19,13 @@ int main(int argc, char*argv[])
     fontCaribbean.loadFromFile("resources/fonts/Caribbean.ttf");
     fontFlogged.loadFromFile("resources/fonts/Flogged.ttf");
 
-    textureBackground.loadFromFile("resources/sprites/background2.jpg");
-    buttonImg.loadFromFile("resources/sprites/button.png");
-	buttonFocImg.loadFromFile("resources/sprites/button_focused.png");
+    textureBackground.loadFromFile("resources/sprites/background.jpg");
+
+    textureTextfield.loadFromFile("resources/sprites/textfield.png");
+	textureTextfieldFocus.loadFromFile("resources/sprites/textfieldFocus.png");
+
+	textureButton.loadFromFile("resources/sprites/button.png");
+	textureButtonFocus.loadFromFile("resources/sprites/buttonFocus.png");
     //
 
     // LABEL
@@ -46,7 +55,7 @@ int main(int argc, char*argv[])
 
     // Text field
         // Username
-        sf::ui::TextField textfieldLogin(buttonImg, buttonFocImg, fontArial, "");
+        sf::ui::TextField textfieldLogin(textureTextfield, textureTextfieldFocus, fontArial, "");
         textfieldLogin.setFontSize(30);
         textfieldLogin.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/3.5);
         textfieldLogin.setFontColor(sf::Color::Black);
@@ -55,7 +64,7 @@ int main(int argc, char*argv[])
         //
 
         // Password
-        sf::ui::TextField textfieldPassword(buttonImg, buttonFocImg, fontArial, "");
+        sf::ui::TextField textfieldPassword(textureTextfield, textureTextfieldFocus, fontArial, "");
         textfieldPassword.setFontSize(30);
         textfieldPassword.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/2);
         textfieldPassword.setFontColor(sf::Color::Black);
@@ -63,6 +72,11 @@ int main(int argc, char*argv[])
         textfieldPassword.setMaxLength(16);
         //
     //
+
+    // Button
+    sf::ui::Button button(connect, textureButton, textureButtonFocus, textureButtonFocus);
+	button.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/1.5);
+	//
 
     while (window.isOpen())
 	{
@@ -74,6 +88,8 @@ int main(int argc, char*argv[])
         //Input
         textfieldLogin.updateEvent(event);
         textfieldPassword.updateEvent(event);
+
+        button.updateEvent(event);
         //
 
         // Output
@@ -86,6 +102,8 @@ int main(int argc, char*argv[])
 
         window.draw(textfieldLogin);
         window.draw(textfieldPassword);
+
+        window.draw(button);
 
         window.display();
         //
