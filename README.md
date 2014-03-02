@@ -1,2 +1,2 @@
-World-of-Sea-Launcher
-=====================
+World-of-Sea
+============
