@@ -7,6 +7,6 @@
 #include <cstdlib>
 
 #define LAUNCHER_WIDTH_X 800
-#define LAUNCHER_HEIGHT_Y 600
+#define LAUNCHER_HEIGHT_Y 640
 
 #endif // MAIN_H_INCLUDED
