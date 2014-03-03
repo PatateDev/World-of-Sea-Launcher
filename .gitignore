@@ -18,3 +18,8 @@
 *.layout
 bin
 obj
+
+# Utilities files
+Makefile
+lib
+*~
