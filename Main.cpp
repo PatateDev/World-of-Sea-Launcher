@@ -29,48 +29,48 @@ int main(int argc, char*argv[])
     //
 
     // LABEL
-        // Background
-        sf::ui::Label labelBackground(textureBackground);
-        //
+    // Background
+    sf::ui::Label labelBackground(textureBackground);
+    //
 
-        // Title
-        sf::ui::Label labelTitle(fontFlogged, "World of Sea");
-        labelTitle.setFontColor(sf::Color::Black);
-        labelTitle.move(LAUNCHER_WIDTH_X/3, LAUNCHER_HEIGHT_Y/12);
-        labelTitle.setFontSize(75);
-        //
+    // Title
+    sf::ui::Label labelTitle(fontFlogged, "World of Sea");
+    labelTitle.setFontColor(sf::Color::Black);
+    labelTitle.move(LAUNCHER_WIDTH_X/3, LAUNCHER_HEIGHT_Y/12);
+    labelTitle.setFontSize(75);
+    //
 
-        // Login
-        sf::ui::Label labelLogin(fontCaribbean, "Username:");
-        labelLogin.setFontColor(sf::Color::Black);
-        labelLogin.move(LAUNCHER_WIDTH_X/10, LAUNCHER_HEIGHT_Y/3.5);
-        //
+    // Login
+    sf::ui::Label labelLogin(fontCaribbean, "Username:");
+    labelLogin.setFontColor(sf::Color::Black);
+    labelLogin.move(LAUNCHER_WIDTH_X/10, LAUNCHER_HEIGHT_Y/3.5);
+    //
 
-        // Password
-        sf::ui::Label labelPassword(fontCaribbean, "Password:");
-        labelPassword.setFontColor(sf::Color::Black);
-        labelPassword.move(LAUNCHER_WIDTH_X/10, LAUNCHER_HEIGHT_Y/2);
-        //
+    // Password
+    sf::ui::Label labelPassword(fontCaribbean, "Password:");
+    labelPassword.setFontColor(sf::Color::Black);
+    labelPassword.move(LAUNCHER_WIDTH_X/10, LAUNCHER_HEIGHT_Y/2);
+    //
     //
 
     // Text field
-        // Username
-        sf::ui::TextField textfieldLogin(textureTextfield, textureTextfieldFocus, fontArial, "");
-        textfieldLogin.setFontSize(30);
-        textfieldLogin.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/3.5);
-        textfieldLogin.setFontColor(sf::Color::Black);
-        textfieldLogin.setCanBeEmpty(true);
-        textfieldLogin.setMaxLength(16);
-        //
+    // Username
+    sf::ui::TextField textfieldLogin(textureTextfield, textureTextfieldFocus, fontArial, "");
+    textfieldLogin.setFontSize(30);
+    textfieldLogin.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/3.5);
+    textfieldLogin.setFontColor(sf::Color::Black);
+    textfieldLogin.setCanBeEmpty(false);
+    textfieldLogin.setMaxLength(16);
+    //
 
-        // Password
-        sf::ui::TextField textfieldPassword(textureTextfield, textureTextfieldFocus, fontArial, "");
-        textfieldPassword.setFontSize(30);
-        textfieldPassword.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/2);
-        textfieldPassword.setFontColor(sf::Color::Black);
-        textfieldPassword.setCanBeEmpty(true);
-        textfieldPassword.setMaxLength(16);
-        //
+    // Password
+    sf::ui::TextField textfieldPassword(textureTextfield, textureTextfieldFocus, fontArial, "");
+    textfieldPassword.setFontSize(30);
+    textfieldPassword.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/2);
+    textfieldPassword.setFontColor(sf::Color::Black);
+    textfieldPassword.setCanBeEmpty(false);
+    textfieldPassword.setMaxLength(16);
+    //
     //
 
     // Button

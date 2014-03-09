@@ -2,6 +2,8 @@
 *.slo
 *.lo
 *.o
+world-of-sea-launcher
+*.exe
 
 # Compiled Dynamic libraries
 *.so
@@ -23,3 +25,4 @@ obj
 Makefile
 lib
 *~
+build
