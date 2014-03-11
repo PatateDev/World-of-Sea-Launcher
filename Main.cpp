@@ -39,6 +39,8 @@ void launcher_connect()
         {
             error = BAD_REQUEST;
         }
+        
+        socket.disconnect();
     }
     else
     {
