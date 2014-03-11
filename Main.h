@@ -7,6 +7,16 @@
 #include <iostream>
 #include <cstdlib>
 
+#if defined(SFML_SYSTEM_WINDOWS)
+#include <windows.h>
+#define EXECUTABLE_NAME "world-of-sea-client.exe"
+#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_MACOS) || defined(SFML_SYSTEM_FREEBSD)
+#include <unistd.h>
+#define EXECUTABLE_NAME "world-of-sea-client"
+#else
+#error Operating System not supported
+#endif
+
 #define LAUNCHER_WIDTH_X 800
 #define LAUNCHER_HEIGHT_Y 640
 

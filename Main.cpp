@@ -1,11 +1,12 @@
 #include "Main.h"
+#include <sstream>
 
 bool login(false);
 sf::String username, password, session;
 LoginErrorId error(NONE);
 int loopLeft(10);
 
-void connect()
+void launcher_connect()
 {
     sf::TcpSocket socket;
     std::cout << "Connecting to the login server ..." << std::endl;
@@ -48,8 +49,16 @@ void connect()
 
 void launch()
 {
-    //TODO
     std::cout << "Launching world-of-sea-client with session : " << session.toAnsiString() << std::endl;
+#ifdef SFML_SYSTEM_WINDOWS
+    std::ostringstream oss;
+    oss << username.toAnsiString();
+    oss << " ";
+    oss << session.toAnsiString();
+    ShellExecute(NULL, "open", EXECUTABLE_NAME, oss.str().c_str(), NULL, SW_SHOWNORMAL);
+#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_MACOS) || defined(SFML_SYSTEM_FREEBSD)
+    execl(EXECUTABLE_NAME, EXECUTABLE_NAME, username.toAnsiString().c_str(), session.toAnsiString().c_str(), NULL);
+#endif
 }
 
 sf::String getErrorMessage()
@@ -140,7 +149,7 @@ int main(int argc, char*argv[])
     //
 
     // Button
-    sf::ui::Button button(connect, textureButton, textureButtonFocus, textureButtonFocus);
+    sf::ui::Button button(launcher_connect, textureButton, textureButtonFocus, textureButtonFocus);
 	button.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/1.5);
 	//
 	
