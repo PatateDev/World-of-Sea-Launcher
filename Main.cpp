@@ -136,16 +136,14 @@ int main(int argc, char*argv[])
     textfieldLogin.setFontSize(30);
     textfieldLogin.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/3.5);
     textfieldLogin.setFontColor(sf::Color::Black);
-    textfieldLogin.setCanBeEmpty(false);
     textfieldLogin.setMaxLength(16);
     //
 
     // Password
-    sf::ui::TextField textfieldPassword(textureTextfield, textureTextfieldFocus, fontArial, "");
+    sf::ui::PasswordField textfieldPassword(textureTextfield, textureTextfieldFocus, fontArial);
     textfieldPassword.setFontSize(30);
     textfieldPassword.move(LAUNCHER_WIDTH_X/2.5, LAUNCHER_HEIGHT_Y/2);
     textfieldPassword.setFontColor(sf::Color::Black);
-    textfieldPassword.setCanBeEmpty(false);
     textfieldPassword.setMaxLength(16);
     //
     //
@@ -175,7 +173,7 @@ int main(int argc, char*argv[])
         //
         
         username = textfieldLogin.getText();
-        password = textfieldPassword.getText();
+        password = textfieldPassword.getPassword();
 
         // Output
         window.clear(sf::Color::White);
